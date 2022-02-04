@@ -6,6 +6,7 @@ pipeline{
       docker.image("gcc-analyse").inside{
         echo "hello"
       }
+    }
   }
   stages{
     stage("Lint test"){
