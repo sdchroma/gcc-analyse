@@ -18,7 +18,8 @@ pipeline{
     }
     stage("Build"){
       steps{
-        sh "/home/gcc-analyse/demo/make"
+        sh "pwd"
+        sh "./demo/make"
       }
     }
   }
