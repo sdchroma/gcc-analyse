@@ -21,10 +21,11 @@ pipeline{
         sh "make"
       }
     }
+    stage('Email Notification'){
+      mail bcc: '', body: '''Build successful!!!!
+      Thanks,
+      Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'smahesh2305@gmail.com'
+    }
   }
-  stage('Email Notification'){
-    mail bcc: '', body: '''Build successful!!!!
-    Thanks,
-    Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'smahesh2305@gmail.com'
-  }
+
 }
