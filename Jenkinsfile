@@ -22,4 +22,12 @@ pipeline{
       }
     }
   }
+  post{
+    success{
+            emailext body: 'Test Successful', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+    }
+    failure{
+            emailext body: 'Test Failed', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+    }
+  }
 }
