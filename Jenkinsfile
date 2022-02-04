@@ -24,10 +24,11 @@ pipeline{
   }
   post{
     success{
-            emailext body: 'Test Successful', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+      mail bcc: '', body: "Test Success!", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "Test Result", to: "talhatasci98@gmail.com";
     }
     failure{
-            emailext body: 'Test Failed', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+      mail bcc: '', body: "Test Failure!", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "Test Result", to: "talhatasci98@gmail.com";
+
     }
   }
 }
