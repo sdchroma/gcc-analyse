@@ -1,5 +1,5 @@
 pipeline{
-  node{
+  agent{
     checkout scm
     
     docker.withRegistry("http://10.60.1.94:5000"){
