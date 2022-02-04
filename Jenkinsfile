@@ -22,9 +22,11 @@ pipeline{
       }
     }
     stage('Email Notification'){
-      mail bcc: '', body: '''Build successful!!!!
-      Thanks,
-      Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'smahesh2305@gmail.com'
+      steps{
+        mail bcc: '', body: '''Build successful!!!!
+          Thanks,
+          Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'smahesh2305@gmail.com'
+      }
     }
   }
 
