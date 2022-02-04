@@ -25,7 +25,7 @@ pipeline{
       steps{
         mail bcc: '123456', body: '''Build successful!!!!
           Thanks,
-          Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'talhatasci98@gmail.com'
+          Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'afatsumlug972@gmail.com'
       }
     }
   }
