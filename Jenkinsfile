@@ -22,13 +22,9 @@ pipeline{
       }
     }
   }
-  post{
-    success{
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-    }
-    failure{
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-
-    }
+  stage('Email Notification'){
+    mail bcc: '', body: '''Build successful!!!!
+    Thanks,
+    Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'smahesh2305@gmail.com'
   }
 }
