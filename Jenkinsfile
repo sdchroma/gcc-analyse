@@ -23,7 +23,7 @@ pipeline{
     }
     stage('Email Notification'){
       steps{
-        mail bcc: '', body: '''Build successful!!!!
+        mail bcc: '123456', body: '''Build successful!!!!
           Thanks,
           Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'talhatasci98@gmail.com'
       }
