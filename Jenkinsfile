@@ -13,7 +13,7 @@ pipeline{
     }
     stage("Static Analyse"){
       steps{
-        sh "cppcheck" /home/gcc-analyse/demo.c --enable=all --addon=/home/Misra/misra.json --xml > report.xml"
+        sh "cppcheck /home/gcc-analyse/demo.c --enable=all --addon=/home/Misra/misra.json --xml > report.xml"
       }
     }
     stage("Build"){
