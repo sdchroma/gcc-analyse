@@ -2,6 +2,7 @@ pipeline{
   agent{    
     docker{
       image "10.60.1.94:5000/gcc-analyse"
+      args "-v /var/lib/jenkins/workspace/gcc-analyse:/home/gcc-analyse"
     }
   }
   stages{
