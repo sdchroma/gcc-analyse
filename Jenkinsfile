@@ -1,11 +1,7 @@
 pipeline{
-  agent{
-    checkout scm
-    
-    docker.withRegistry("http://10.60.1.94:5000"){
-      docker.image("gcc-analyse").inside{
-        echo "hello"
-      }
+  agent{    
+    docker{
+      image "10.60.1.94:5000/gcc-analyse"
     }
   }
   stages{
