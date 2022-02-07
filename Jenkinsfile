@@ -34,16 +34,17 @@ pipeline{
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
       }
     }
+  }
+  node {
     stage('JIRA') {
-    def transitionInput =
-    [
+      def transitionInput =
+      [
         transition: [
-            id: '5'
+          id: '5'
         ]
-    ]
+      ]
 
-    jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+      jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+    }
   }
-  }
-
 }
