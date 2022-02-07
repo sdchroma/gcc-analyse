@@ -42,9 +42,6 @@ pipeline{
     }
     stage('JIRA') {
       steps{
-        script{
- 
-        }
         jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
       }
 
