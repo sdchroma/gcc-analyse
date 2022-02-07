@@ -38,6 +38,7 @@ pipeline{
           ]
         ]
         jiraTransitionIssue idOrKey: "JD-1", input: transitionInput        
+      }
     }
   }
 
