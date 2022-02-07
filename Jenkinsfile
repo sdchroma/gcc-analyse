@@ -32,7 +32,12 @@ pipeline{
       steps{
         echo "bbbbbb"
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
-jiraSendDeploymentInfo environmentId: 'JD-2', environmentName: 'JD-2', environmentType: 'development', issueKeys: [''], serviceIds: [''], site: 'jenkins-demo.atlassian.net', state: 'unknown'      }
+        def transitionInput = [
+          transition:[
+            id: '1'
+          ]
+        ]
+        jiraTransitionIssue idOrKey: "JD-1", input: transitionInput        
     }
   }
 
