@@ -33,7 +33,8 @@ pipeline{
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
       }
     }
-    post {
+  }
+  post {
       success{
         script{
           withEnv(['JIRA_SITE=LOCAL']){
@@ -47,6 +48,4 @@ pipeline{
         }
       }
     }
-  }
-
 }
