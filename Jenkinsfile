@@ -28,6 +28,11 @@ pipeline{
           Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'talha.tasci@pavotek.com.tr'
       }
     }
+    stage("Notify Jira"){
+      steps{
+        jiraSendBuildInfo branch: '', site: 'jenkins-demo.atlassian.net'
+      }
+    }
   }
 
 }
