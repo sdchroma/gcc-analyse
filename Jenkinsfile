@@ -33,8 +33,8 @@ pipeline{
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
       }
     }
-    stage('JIRA') {
-      steps{
+    post {
+      success{
         script{
           withEnv(['JIRA_SITE=LOCAL']){
             def transitionInput=[
@@ -44,7 +44,7 @@ pipeline{
             ]
             jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
           }
-        }         
+        }
       }
     }
   }
