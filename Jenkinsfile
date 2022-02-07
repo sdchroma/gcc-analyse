@@ -36,7 +36,7 @@ pipeline{
     stage('JIRA') {
       steps{
         script{
-          withEnv(['JIRA_SITE=jenkins-demo']){
+          {
             def transitionInput=[
               transition:[
                 id:'41'       
