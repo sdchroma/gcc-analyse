@@ -35,15 +35,18 @@ pipeline{
       }
     }
     stage('JIRA') {
-      script{
-        def transitionInput =
-        [
-          transition: [
-            id: '5'
-          ]
-        ]  
+      steps{
+        script{
+          def transitionInput =
+          [
+            transition: [
+              id: '5'
+            ]
+          ]  
+        }
+        jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
       }
-      jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+
     }
   }
 
