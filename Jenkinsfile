@@ -42,7 +42,7 @@ pipeline{
                 id:'11'       
               ]
             ]
-            jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+            jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
           }
         }         
       }
