@@ -31,7 +31,7 @@ pipeline{
     stage("Notify Jira"){
       steps{
         echo "aaaaaa"
-        jiraSendBuildInfo branch: '', site: 'jenkins-demo.atlassian.net'
+        jiraSendBuildInfo branch: 'JD-2', site: 'jenkins-demo.atlassian.net'
       }
     }
   }
