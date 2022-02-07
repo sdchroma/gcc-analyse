@@ -48,13 +48,15 @@ pipeline{
       }
     }
     failure{
-      withEnv(['JIRA_SITE=LOCAL']){
-        def transitionInput=[
-          transition:[
-            id='41'
+      script{
+        withEnv(['JIRA_SITE=LOCAL']){
+         def transitionInput=[
+            transition:[
+              id:'51'       
+            ]
           ]
-        ]
-        jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
+          jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
+        }
       }
     }
   }
