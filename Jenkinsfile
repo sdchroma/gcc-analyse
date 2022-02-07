@@ -1,9 +1,3 @@
-          def transitionInput =
-          [
-            transition: [
-              id: '41',
-            ]
-          ] 
 pipeline{
   agent{    
     docker{
@@ -36,16 +30,20 @@ pipeline{
     }
     stage("Notify Jira"){
       steps{
-        echo "bbbbbb"
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
       }
     }
     stage('JIRA') {
+      withEnv(['JIRA_SITE=jenkins-demo']) {
       steps{
-          script{
-                          
-          }
-        jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+        script{
+          def transitionInput[
+            transition:[
+              id:'41'       
+            ]
+          ]
+          jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+        }         
       }
 
     }
