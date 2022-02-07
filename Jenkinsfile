@@ -36,14 +36,12 @@ pipeline{
     stage('JIRA') {
       steps{
         script{
-          withEnv(['JIRA_SITE=LOCAL']){
             def transitionInput=[
               transition:[
                 id:'41'       
               ]
             ]
-            jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput          
-          }
+            jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
         }         
       }
     }
