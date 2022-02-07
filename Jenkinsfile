@@ -29,18 +29,21 @@ pipeline{
       }
     }
     stage("Notify Jira"){
-      def transitionInput = [
-        transition:[
-          id: '1'
-        ]
-      ]
       steps{
         echo "bbbbbb"
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
-
-        jiraTransitionIssue idOrKey: "JD-1", input: transitionInput        
       }
     }
+    stage('JIRA') {
+    def transitionInput =
+    [
+        transition: [
+            id: '5'
+        ]
+    ]
+
+    jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
+  }
   }
 
 }
