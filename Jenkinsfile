@@ -39,7 +39,7 @@ pipeline{
           withEnv(['JIRA_SITE=LOCAL']){
             def transitionInput=[
               transition:[
-                id:'41'       
+                id:'51'       
               ]
             ]
             jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
