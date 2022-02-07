@@ -28,11 +28,6 @@ pipeline{
           Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'talha.tasci@pavotek.com.tr'
       }
     }
-    stage("Notify Jira"){
-      steps{
-        jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
-      }
-    }
   }
   post {
     success{
@@ -58,6 +53,9 @@ pipeline{
           jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
         }
       }
+    }
+    always{
+      jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
     }
   }
 }
