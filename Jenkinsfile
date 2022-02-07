@@ -1,7 +1,8 @@
           def transitionInput =
           [
             transition: [
-              id: '11'
+              id: '11',
+              name: 'JD-1'
             ]
           ] 
 pipeline{
