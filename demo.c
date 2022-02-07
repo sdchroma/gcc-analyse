@@ -6,7 +6,7 @@ int main()
 
     for (i = 1; i <= 10; ++i)
     {
-        print("%d, ", t1);
+        printf("%d, ", t1);
         nextTerm = t1 + t2;
         t1 = t2;
         t2 = nextTerm;
