@@ -32,8 +32,7 @@ pipeline{
       steps{
         echo "bbbbbb"
         jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
-        jiraSendDeploymentInfo environmentId: 'JD-3', environmentName: 'JD-3', environmentType: 'development', issueKeys: ['JD-3'], serviceIds: [''], site: 'jenkins-demo.atlassian.net', state: 'successful'
-      }
+jiraSendDeploymentInfo environmentId: 'JD-2', environmentName: 'JD-2', environmentType: 'development', issueKeys: [''], serviceIds: [''], site: 'jenkins-demo.atlassian.net', state: 'unknown'      }
     }
   }
 
