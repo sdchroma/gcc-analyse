@@ -1,3 +1,9 @@
+          def transitionInput =
+          [
+            transition: [
+              id: '1'
+            ]
+          ] 
 pipeline{
   agent{    
     docker{
@@ -37,12 +43,7 @@ pipeline{
     stage('JIRA') {
       steps{
         script{
-          def transitionInput =
-          [
-            transition: [
-              id: '1'
-            ]
-          ]  
+ 
         }
         jiraTransitionIssue idOrKey: 'TEST-1', input: transitionInput
       }
