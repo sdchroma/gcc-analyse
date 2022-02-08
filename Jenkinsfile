@@ -1,4 +1,3 @@
-checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'dbabda97-66a9-429c-b2b3-e3811d92ac40', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'file://home/talha/.svnrepos/MyRepo/trunk']], quietOperation: true, workspaceUpdater: [$class: 'UpdateUpdater']])
 pipeline{
   agent{    
     docker{
