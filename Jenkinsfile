@@ -29,33 +29,33 @@ pipeline{
       }
     }
   }
-//   post {
-//     success{
-//       script{
-//         withEnv(['JIRA_SITE=LOCAL']){
-//          def transitionInput=[
-//             transition:[
-//               id:'51'       
-//             ]
-//           ]
-//           jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
-//         }
-//       }
-//     }
-//     failure{
-//       script{
-//         withEnv(['JIRA_SITE=LOCAL']){
-//          def transitionInput=[
-//             transition:[
-//               id:'41'       
-//             ]
-//           ]
-//           jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
-//         }
-//       }
-//     }
-//     always{
-//       jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
-//     }
-//   }
+  post {
+    success{
+      script{
+        withEnv(['JIRA_SITE=LOCAL']){
+         def transitionInput=[
+            transition:[
+              id:'51'       
+            ]
+          ]
+          jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
+        }
+      }
+    }
+    failure{
+      script{
+        withEnv(['JIRA_SITE=LOCAL']){
+         def transitionInput=[
+            transition:[
+              id:'41'       
+            ]
+          ]
+          jiraTransitionIssue idOrKey: 'JD-1', input: transitionInput
+        }
+      }
+    }
+    always{
+      jiraSendBuildInfo branch: 'JD-1', site: 'jenkins-demo.atlassian.net'
+    }
+  }
 }
